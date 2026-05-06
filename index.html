@@ -868,8 +868,6 @@ function startPhase(dur,brk,t){
   ov.classList.add('open'); ov.classList.toggle('brk',isBreak);
   buildOvPanel();
   requestWakeLock();
-  // 상태바 검정으로
-  document.getElementById('statusBarMeta').content='black-translucent';
   if(timerRAF){cancelAnimationFrame(timerRAF);timerRAF=null;}
   timerRAF=requestAnimationFrame(tick);
 }
@@ -935,7 +933,6 @@ function stopClean(){
   document.getElementById('overlay').classList.remove('open','brk');
   removeOvPanel();
   releaseWakeLock();
-  document.getElementById('statusBarMeta').content='default';
 }
 
 // ── SOUND & FLASH ─────────────────────────────────────────────────────────────
